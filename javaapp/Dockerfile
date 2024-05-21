@@ -1,9 +1,19 @@
+#BASE IMAGE
+
 FROM openjdk:11
+
+#WorkDir
 
 WORKDIR app/
 
-COPY . .
+#COPY current to WORKDIR
 
-RUN javac Hello.java
+COPY HelloWorld.java .
 
-CMD ["java","Hello"]
+#Compiler
+
+RUN javac HelloWorld.java
+
+#Run the java compiled code
+
+CMD ["java","HelloWorld"]
